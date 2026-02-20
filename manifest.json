@@ -10,7 +10,7 @@
   "authors": [
     {
       "name": "wuke",
-      "link": "https://github.com/wuke2"
+      "link": "https://github.com/wuke3"
     }
   ],
   "platform": ["win32", "linux", "darwin"],
@@ -21,7 +21,7 @@
     "preload": "./dist/preload/index.js"
   },
   "repository": {
-    "repo": "xiyuesaves/lite_tools",
-    "branch": "dev/v5"
+    "repo": "wuke3/lite-tools",
+    "branch": "main"
   }
 }
