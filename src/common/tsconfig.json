@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "strict": true,
+    "rootDir": "./",
+    "outDir": "../../build/common"
+  },
+  "references": [
+    {
+      "path": "../types"
+    }
+  ],
+  "include": ["**/*", "../types/*"]
+}

@@ -1,0 +1,27 @@
+{
+  "manifest_version": 4,
+  "type": "extension",
+  "name": "轻量工具箱",
+  "slug": "lite-tools",
+  "description": "轻量 · 优雅 · 高效",
+  "version": "4.1.0",
+  "qqntVersion": "9.9.27-45758",
+  "icon": "./icon.png",
+  "authors": [
+    {
+      "name": "wuke",
+      "link": "https://github.com/wuke2"
+    }
+  ],
+  "platform": ["win32", "linux", "darwin"],
+  "dependencies": ["ipc_interceptor"],
+  "injects": {
+    "renderer": "./dist/renderer/index.ll.js",
+    "main": "./dist/main/index.js",
+    "preload": "./dist/preload/index.js"
+  },
+  "repository": {
+    "repo": "xiyuesaves/lite_tools",
+    "branch": "dev/v5"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/QwQ-002/types/main/plugin.schema.json",
+  "name": "lite-tools",
+  "version": "4.1.0",
+  "qqntVersion": "9.9.27-45758",
+  "description": "轻量 · 优雅 · 高效",
+  "type": "commonjs",
+  "qwqnt": {
+    "name": "轻量工具箱",
+    "inject": {
+      "renderer": "./dist/renderer/index.qwq.js",
+      "preload": "./dist/preload/index.js"
+    },
+    "dependencies": {
+      "qwqnt-ipc-logger?": "^1.3.1",
+      "qwqnt-ipc-interceptor": "^1.2.1",
+      "qwqnt-plugin-settings": "^2.0.0"
+    }
+  },
+  "author": "xiyuesaves",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiyuesaves/lite-tools/tree/dev/v5"
+  },
+  "license": "AGPL-3.0-only",
+  "main": "./dist/main/index.js",
+  "scripts": {
+    "build": "ts-node -P ./tsconfig.json scripts/build.ts",
+    "build:alpha": "ts-node -P ./tsconfig.json scripts/build.ts --alpha",
+    "dev": "ts-node -P ./tsconfig.json scripts/build.ts --watch",
+    "check:types": "tsc --build --emitDeclarationOnly"
+  },
+  "keywords": [],
+  "packageManager": "pnpm@10.28.0",
+  "devDependencies": {
+    "@qwqnt/types": "https://github.com/QwQ-002/types",
+    "@types/adm-zip": "^0.5.7",
+    "@types/node": "20.19.20",
+    "adm-zip": "^0.5.16",
+    "chokidar": "^4.0.3",
+    "electron": "^37.2.5",
+    "esbuild": "^0.25.8",
+    "sass": "^1.89.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

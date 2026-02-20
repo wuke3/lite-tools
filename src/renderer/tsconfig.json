@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "strict": true,
+    "rootDir": "./",
+    "outDir": "../../build/renderer",
+    "lib": ["ESNext", "DOM"],
+    "types": ["@qwqnt/types"]
+  },
+  "references": [
+    {
+      "path": "../types"
+    },
+    {
+      "path": "../preload"
+    },
+    {
+      "path": "../common"
+    }
+  ],
+  "include": ["**/*", "../types/*", "../preload/*", "../common/*"]
+}

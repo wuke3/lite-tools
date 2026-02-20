@@ -1,0 +1,565 @@
+<lite-tools class="lite-tools-settings plugins">
+  <h1>功能</h1>
+  <!-- 界面调整 -->
+  <div class="wrap interface">
+    <div class="vertical-list-item title">
+      <h2>界面调整</h2>
+      <svg class="icon is-fold" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <ul class="hidden">
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>隐藏VIP彩色昵称</h2>
+        </div>
+        <div class="q-switch" data-config="interface.removeVipColor">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>时间设置</h2>
+          <span class="secondary-text">在顶部QQ天气前面显示完整时间（时区+年月日+时分秒）</span>
+        </div>
+        <div class="q-switch" data-config="interface.showTime">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- 菜单隐藏 -->
+  <div class="wrap interface">
+    <div class="vertical-list-item title">
+      <h2>菜单隐藏</h2>
+      <svg class="icon is-fold" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <ul class="hidden">
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>隐藏经典模式切换按钮</h2>
+          <span class="secondary-text">需重启菜单</span>
+        </div>
+        <div class="q-switch" data-config="interface.hiddenClassicBtn">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>隐藏聊天记录管理</h2>
+          <span class="secondary-text">需重启菜单</span>
+        </div>
+        <div class="q-switch" data-config="interface.hiddenChatRecordManager">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>隐藏检查更新按钮和更新通知</h2>
+          <span class="secondary-text">需重启菜单</span>
+        </div>
+        <div class="q-switch" data-config="interface.hiddenUpdateBtnAndNotice">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>隐藏帮助</h2>
+          <span class="secondary-text">需重启菜单</span>
+        </div>
+        <div class="q-switch" data-config="interface.hiddenHelp">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>隐藏锁定按钮</h2>
+          <span class="secondary-text">需重启菜单</span>
+        </div>
+        <div class="q-switch" data-config="interface.hiddenLockBtn">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>隐藏退出账号按钮</h2>
+          <span class="secondary-text">需重启菜单</span>
+        </div>
+        <div class="q-switch" data-config="interface.hiddenLogoutBtn">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- 消息相关 -->
+  <div class="wrap chatMessage">
+    <div class="vertical-list-item title">
+      <h2>消息相关</h2>
+      <svg class="icon is-fold" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <ul class="hidden">
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>替换小程序卡片</h2>
+          <span class="secondary-text">替换所有支持浏览器打开的小程序分享卡片为网页卡片 - 重载消息生效</span>
+        </div>
+        <div class="q-switch" data-config="message.miniArkToWebArk">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>解除表情限制</h2>
+          <span class="secondary-text">解除商城表情无法保存，查看大图的限制 - 重载消息生效</span>
+        </div>
+        <div class="q-switch" data-config="message.marketFaceToPicElement">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>显示消息发送时间</h2>
+          <span class="secondary-text">显示每一条消息的发送时间 - 重载消息生效</span>
+        </div>
+        <div class="q-switch" data-config="message.showSendTime.enabled">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2 title="或许可以避免迷失在时差中...">显示时区</h2>
+          <span class="secondary-text">在时间前面显示当前时区，比如 “GMT +8”</span>
+        </div>
+        <div class="q-switch" data-config="message.showSendTime.showTimeZone">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>时间格式</h2>
+          <span class="secondary-text">调整显示的时间格式</span>
+        </div>
+        <div class="setting-select" data-config="message.showSendTime.timeFormat">
+          <div class="setting-view text_color show-icon" data-value="未初始化"></div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+          </svg>
+          <div class="setting-option">
+            <div class="setting-item" data-value="220">hh:mm</div>
+            <div class="setting-item" data-value="222">hh:mm:ss</div>
+          </div>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>日期格式</h2>
+          <span class="secondary-text">调整显示的日期格式</span>
+        </div>
+        <div class="setting-select" data-config="message.showSendTime.dateFormat">
+          <div class="setting-view text_color show-icon" data-value="未初始化"></div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+          </svg>
+          <div class="setting-option show">
+            <div class="setting-item" data-value="000">不显示</div>
+            <div class="setting-item" data-value="011">M/D</div>
+            <div class="setting-item" data-value="022">MM/DD</div>
+            <div class="setting-item" data-value="211">YY/M/D</div>
+            <div class="setting-item" data-value="222">YY/MM/DD</div>
+            <div class="setting-item" data-value="111">YYYY/M/D</div>
+            <div class="setting-item" data-value="122">YYYY/MM/DD</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- 阻止撤回 -->
+  <div class="wrap chatMessage">
+    <div class="vertical-list-item title">
+      <h2>阻止撤回</h2>
+      <svg class="icon is-fold" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <ul class="hidden">
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>启用</h2>
+        </div>
+        <div class="q-switch" data-config="message.preventRecall.enabled">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>拦截自己的撤回操作</h2>
+          <span class="secondary-text">本人发起的撤回也将被拦截</span>
+        </div>
+        <div class="q-switch" data-config="message.preventRecall.preventSelfMsg">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <span class="lt-disabled">
+        <hr class="horizontal-dividing-line" />
+        <li class="vertical-list-item">
+          <div>
+            <h2>拦截所有聊天</h2>
+            <span class="secondary-text">默认仅拦截最近打开过的10个聊天对象，启用后会占用更多资源 - 重启生效</span>
+          </div>
+          <div class="q-switch" data-config="message.preventRecall.blockAllrecall">
+            <span class="q-switch__handle"></span>
+          </div>
+        </li>
+      </span>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>持久化保存</h2>
+          <span class="secondary-text">
+            将撤回记录保存在插件的数据目录中，建议每隔一段时间清理一次本地数据。<br />
+          </span>
+        </div>
+        <div class="q-switch" data-config="message.preventRecall.persistedFiles">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>重定向图片储存路径</h2>
+          <span class="secondary-text">将被撤回图片保存到插件的数据目录下</span>
+        </div>
+        <div class="q-switch" data-config="message.preventRecall.redirectPicPath">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>查看重定向图片</h2>
+          <span class="secondary-text">打开重定向图片储存路径</span>
+        </div>
+        <div class="ops-btns">
+          <button class="q-button q-button--small q-button--secondary open-redirect-pic-path">打开</button>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>自定义颜色</h2>
+          <span class="secondary-text">调整撤回消息颜色 - 重载消息生效</span>
+        </div>
+        <div class="q-switch" data-config="message.preventRecall.customColor">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>撤回提示颜色</h2>
+          <span class="secondary-text">撤回提示标记显示颜色</span>
+        </div>
+        <div class="custom-text-color">
+          <input title="颜色" class="custom-text-color" type="color" />
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>重新编辑颜色</h2>
+          <span class="secondary-text">重新编辑按钮显示颜色</span>
+        </div>
+        <div class="custom-text-color">
+          <input title="颜色" class="custom-reedit-color" type="color" />
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>清理缓存</h2>
+          <span class="secondary-text local-recall-msg-num" title="仅供参考，可能和实际消息数量有所出入"
+            >清除所有撤回数据，当前保存有 0 条消息</span
+          >
+        </div>
+        <div class="ops-btns">
+          <button class="q-button q-button--small q-button--danger clear-localStorage-recall-msg">清理</button>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>查看撤回消息</h2>
+          <span class="secondary-text">查看所有的撤回数据</span>
+        </div>
+        <div class="ops-btns">
+          <button class="q-button q-button--small q-button--secondary open-recall-msg-list">查看</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- 背景功能 -->
+  <div class="wrap background">
+    <div class="vertical-list-item title">
+      <h2>自定义背景</h2>
+      <svg class="icon is-fold" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <ul class="hidden">
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>启用</h2>
+          <span class="secondary-text">
+            仅支持单张图片/视频<br />
+            使用前需要启用官方 <strong>极简白</strong> 主题
+          </span>
+        </div>
+        <div class="q-switch" data-config="interface.wallpaper.enabled">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <li class="select-path vertical-list-item">
+        <input
+          placeholder="请选择文件"
+          readonly
+          data-clear
+          title="移除路径"
+          class="select-file input-text text_color"
+          type="text"
+          spellcheck="false"
+          data-config="interface.wallpaper.path"
+        />
+        <div class="ops-btns">
+          <button
+            class="q-button q-button--small q-button--secondary select-file"
+            data-config="interface.wallpaper.path"
+            data-choose="file"
+            data-file-ext="jpg,png,jpeg,gif,webp,mp4,webm"
+          >
+            选择
+          </button>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>背景透明</h2>
+          <span class="secondary-text">移除背景底色</span>
+        </div>
+        <div class="q-switch" data-config="interface.wallpaper.removeOverlay">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>媒体透明度</h2>
+          <span class="secondary-text">背景图片/视频的透明度，范围为 0-100</span>
+        </div>
+        <div class="slot-input-box">
+          <input
+            placeholder="50"
+            class="slot-input text_color"
+            data-config="interface.wallpaper.opacity"
+            type="number"
+            spellcheck="false"
+          />
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>容器透明度</h2>
+          <span class="secondary-text">前景容器的透明度，范围为 0-100</span>
+        </div>
+        <div class="slot-input-box">
+          <input
+            placeholder="50"
+            class="slot-input text_color"
+            data-config="interface.wallpaper.containerOpacity"
+            type="number"
+            spellcheck="false"
+          />
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>磨砂效果</h2>
+          <span class="secondary-text">提升文本可读性，会降低性能</span>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>联系人列表</h2>
+        </div>
+        <div class="q-switch" data-config="interface.wallpaper.blur.recentContact">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>群聊成员</h2>
+        </div>
+        <div class="q-switch" data-config="interface.wallpaper.blur.groupBox">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>消息气泡</h2>
+        </div>
+        <div class="q-switch" data-config="interface.wallpaper.blur.message">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>输入框</h2>
+        </div>
+        <div class="q-switch" data-config="interface.wallpaper.blur.chatInputArea">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <h1>精简</h1>
+  <div class="wrap sideBar">
+    <div class="vertical-list-item title">
+      <h2>侧边栏</h2>
+      <svg class="icon is-fold" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <ul class="hidden"></ul>
+  </div>
+  <div class="wrap topFuncBar">
+    <div class="vertical-list-item title">
+      <h2>顶部功能栏</h2>
+      <svg class="icon is-fold" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <ul class="hidden">
+      <div class="first-tips">
+        <hr class="horizontal-dividing-line" />
+        <li class="vertical-list-item">
+          <div>
+            <h2>首次使用需要手动打开群聊/私聊界面一次，并重新打开设置界面</h2>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+  <div class="wrap chatFuncBar">
+    <div class="vertical-list-item title">
+      <h2>聊天功能栏</h2>
+      <svg class="icon is-fold" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <ul class="hidden">
+      <div class="first-tips">
+        <hr class="horizontal-dividing-line" />
+        <li class="vertical-list-item">
+          <div>
+            <h2>首次使用需要手动打开群聊/私聊界面一次，并重新打开设置界面</h2>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+  <h1>其他</h1>
+  <div class="wrap other">
+    <div class="vertical-list-item title">
+      <h2>调试功能</h2>
+      <svg class="icon is-fold" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <ul class="hidden">
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>关闭调试模式</h2>
+          <span class="secondary-text">关闭后需再次点击版本号7次激活</span>
+        </div>
+        <div class="q-switch" data-config="debug.enabled">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>渲染进程调试</h2>
+        </div>
+        <div class="q-switch" data-config="debug.console">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>主进程调试</h2>
+        </div>
+        <div class="q-switch" data-config="debug.mainConsole">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>全局元素显示</h2>
+          <span class="secondary-text">显示界面中所有元素的边框</span>
+        </div>
+        <div class="q-switch" data-config="debug.showAllElements">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>显示视图更新</h2>
+          <span class="secondary-text">显示视图中更新的元素 - 可能影响性能</span>
+        </div>
+        <div class="q-switch" data-config="debug.showViewUpdates">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>性能监控</h2>
+          <span class="secondary-text">显示实时性能数据和帧率</span>
+        </div>
+        <div class="q-switch" data-config="debug.performanceMonitor">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <h1 class="version">
+    当前版本<span class="link tag-version" data-href="https://github.com/xiyuesaves/lite_tools/tree/v4">v0.0.0</span>
+  </h1>
+  <p class="branch-info">wuke分支，非官版</p>
+</lite-tools>

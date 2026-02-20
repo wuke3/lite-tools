@@ -1,0 +1,191 @@
+:root {
+  --lt-wallpaper-opacity: 0;
+  --lt-wallpaper-blur: 10px;
+  --lt-wallpaper-msgbox-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.lt-wallpaper {
+  .lt-wallpaper-container {
+    opacity: 1;
+  }
+  // 任何主题都可以在body上添加这个类名来屏蔽自带样式
+  &:not(.disable-lt-wallpaper-style) {
+    #app {
+      position: relative;
+      .global-container {
+        transition: background-color 300ms;
+        background-color: color(from var(--nt_bg_nav_2_60_2_alpha) srgb r g b / 0) !important;
+        .contact-layout.container-content-view {
+          background-color: unset !important;
+          .contact {
+            transition: background-color 300ms;
+            background-color: color(
+              from var(--bg_bottom_standard) srgb r g b / var(--lt-wallpaper-container-opacity)
+            ) !important;
+            .tab-content {
+              $container-opacity: var(--lt-wallpaper-container-opacity);
+              $hover-opacity: calc($container-opacity + 0.2);
+              .q-collapse-item__header {
+                transition: background-color 300ms;
+                background-color: unset;
+                &:hover {
+                  border-radius: 4px;
+                  background-color: color(from var(--bg_bottom_standard) srgb r g b / #{$container-opacity});
+                }
+              }
+              .viewport-list__inner {
+                background-color: color(from var(--bg_bottom_standard) srgb r g b / #{$hover-opacity});
+                border-radius: 0 0 4px 4px;
+              }
+              .q-collapse-item--active {
+                .q-collapse-item__header {
+                  border-radius: 4px 4px 0 0;
+                  background-color: color(from var(--bg_bottom_standard) srgb r g b / #{$hover-opacity});
+                }
+              }
+            }
+          }
+          .contact-layout__right-area {
+            & > .sys-notify,
+            & > .contact-profile {
+              transition: background-color 300ms;
+              background-color: color(
+                from var(--bg_bottom_standard) srgb r g b / var(--lt-wallpaper-container-opacity)
+              ) !important;
+              .sys-notify-list {
+                .viewport-list__inner {
+                  background: unset !important;
+                  .sys-notify-card {
+                    background-color: color(
+                      from var(--bg_bottom_standard) srgb r g b / var(--lt-wallpaper-container-opacity)
+                    ) !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .container-content {
+          .draggable-view__container.sidebar.container-sidebar .sidebar-nav,
+          .message-panel.container-content-view {
+            transition: background-color 300ms;
+            background-color: color(
+              from var(--bg_bottom_standard) srgb r g b / var(--lt-wallpaper-container-opacity)
+            ) !important;
+          }
+        }
+        .recent-contact {
+          background: unset;
+        }
+      }
+      .chat-container {
+        transition: background-color 300ms;
+        background-color: color(from var(--nt_bg_nav_2_60_2_alpha) srgb r g b / 0) !important;
+        .container-content {
+          transition: background-color 300ms;
+          background-color: color(
+            from var(--bg_bottom_standard) srgb r g b / var(--lt-wallpaper-container-opacity)
+          ) !important;
+        }
+      }
+      .msg-content-container .message-content ::selection {
+        background-color: rgba(0, 153, 255, 0.5) !important;
+      }
+    }
+    &.lt-wallpaper-blur-message {
+      .babble {
+        backdrop-filter: blur(var(--lt-wallpaper-blur));
+        background: color(from var(--nt_blur_bottom_superlight_2_30_2_alpha) srgb r g b / 0.5) !important;
+        display: inline-block;
+        box-shadow: var(--lt-wallpaper-msgbox-shadow);
+      }
+      .message-content__wrapper {
+        .forward-msg,
+        .msg-content-container:not(.mix-message__container--pic) {
+          backdrop-filter: blur(var(--lt-wallpaper-blur));
+          background: color(from var(--bubble_guest) srgb r g b / 0.5) !important;
+          box-shadow: var(--lt-wallpaper-msgbox-shadow);
+        }
+        .mix-message__container--pic {
+          .image:focus:after {
+            background: unset !important;
+          }
+          .image {
+            img {
+              filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+            }
+          }
+        }
+        .mix-message__container {
+          &:focus {
+            filter: unset !important;
+          }
+        }
+      }
+    }
+    &.lt-wallpaper-blur-chat-input-area {
+      .chat-input-area {
+        z-index: 1;
+        &::after {
+          content: "";
+          box-shadow: inset 0 1px 0 0 var(--border_standard);
+          box-sizing: border-box;
+          pointer-events: none;
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: -1;
+          bottom: 0;
+          left: 0;
+          backdrop-filter: blur(var(--lt-wallpaper-blur));
+        }
+      }
+    }
+    &.lt-wallpaper-blur-recent-contact {
+      .recent-contact {
+        backdrop-filter: blur(var(--lt-wallpaper-blur));
+      }
+    }
+    &.lt-wallpaper-blur-group-box {
+      .group-box__container {
+        backdrop-filter: blur(var(--lt-wallpaper-blur));
+      }
+    }
+    &.lt-wallpaper-remove-overlay {
+      .lt-wallpaper-container {
+        background: unset;
+      }
+    }
+  }
+}
+.lt-wallpaper-container {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: 300ms;
+  position: absolute;
+  pointer-events: none;
+  background-color: var(--bg_bottom_standard);
+  .lt-wallpaper {
+    transition: 300ms;
+    opacity: var(--lt-wallpaper-opacity, 0);
+    width: 100%;
+    height: 100%;
+    & > * {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      transition: 300ms;
+      opacity: 0;
+      &.show {
+        opacity: 1;
+      }
+    }
+  }
+}

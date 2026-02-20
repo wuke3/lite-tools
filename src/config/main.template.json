@@ -1,0 +1,123 @@
+{
+  "debug": {
+    "enabled": false,
+    "console": false,
+    "mainConsole": false,
+    "showAllElements": false,
+    "showViewUpdates": false,
+    "performanceMonitor": false
+  },
+  "interface": {
+    "hiddenClassicBtn": false,
+    "hiddenLockBtn": false,
+    "hiddenLogoutBtn": false,
+    "hiddenUpdateBtnAndNotice": false,
+    "hiddenChatRecordManager": false,
+    "hiddenHelp": false,
+    "removeVipColor": false,
+    "showTime": false,
+    "wallpaper": {
+      "enabled": false,
+      "removeOverlay": false,
+      "path": "",
+      "opacity": "100",
+      "containerOpacity": "0",
+      "blur": {
+        "message": false,
+        "chatInputArea": false,
+        "recentContact": false,
+        "groupBox": false
+      }
+    }
+  },
+  "message": {
+    "miniArkToWebArk": false,
+    "marketFaceToPicElement": false,
+    "showSendTime": {
+      "enabled": false,
+      "showTimeZone": false,
+      "timeFormat": "220",
+      "dateFormat": "000"
+    },
+    "preventRecall": {
+      "enabled": false,
+      "persistedFiles": false,
+      "customColor": false,
+      "customTextColor": "#ff7979",
+      "reeditTextColor": "#ff7979",
+      "preventSelfMsg": false,
+      "blockAllrecall": false,
+      "cacheHistory": false,
+      "stealthMode": false,
+      "redirectPicPath": false,
+      "MAX_PERSISTED_FILES": 5,
+      "MAX_MESSAGES_PER_FILE": 1000,
+      "MAX_RECALL_CACHE_SIZE": 100000
+    }
+  },
+  "sideBar": {
+    "top": [
+      {
+        "name": "消息",
+        "id": -1,
+        "enabled": true
+      },
+      {
+        "name": "联系人",
+        "id": -1,
+        "enabled": true
+      },
+      {
+        "name": "更多",
+        "id": -1,
+        "enabled": true
+      }
+    ],
+    "bottom": [
+      {
+        "name": "调色盘",
+        "id": -1,
+        "enabled": true
+      },
+      {
+        "name": "邮箱",
+        "id": -1,
+        "enabled": true
+      },
+      {
+        "name": "文件管理器",
+        "id": -1,
+        "enabled": true
+      },
+      {
+        "name": "收藏",
+        "id": -1,
+        "enabled": true
+      },
+      {
+        "name": "我的手机",
+        "id": -1,
+        "enabled": true
+      },
+      {
+        "name": "更多",
+        "id": -1,
+        "desc": "该栏目包含设置页面入口，关闭前请确认你有其他办法可以打开设置页面",
+        "enabled": true
+      }
+    ]
+  },
+  "topFuncBar": [
+    {
+      "name": "等待栏目初始化..."
+    }
+  ],
+  "chatFuncBar": [
+    {
+      "name": "等待栏目初始化..."
+    }
+  ],
+  "global": {
+    "rkeyServerUrl": "https://rkey.furrycloud.top"
+  }
+}

@@ -1,0 +1,546 @@
+.lt-disabled {
+  display: none !important;
+}
+
+// 全局元素显示 - 所有元素加边框
+.lt-show-all-elements * {
+  border: 1px solid rgba(255, 0, 0, 0.3) !important;
+  box-sizing: border-box !important;
+}
+
+// 显示视图更新 - 更新的元素高亮
+.lt-show-view-updates .lt-view-updated {
+  animation: lt-flash 0.5s ease-out;
+}
+
+@keyframes lt-flash {
+  0% {
+    outline: 2px solid rgba(0, 255, 0, 0.8);
+  }
+  100% {
+    outline: 2px solid rgba(0, 255, 0, 0);
+  }
+}
+
+// 性能监控容器
+.lt-performance-monitor {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 10px;
+  height: 32px;
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--nt_text_color_1, #000);
+}
+
+.lt-performance-monitor .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 40px;
+}
+
+.lt-performance-monitor .stat-label {
+  font-size: 11px;
+  color: var(--nt_text_color_3, #666);
+}
+
+.lt-performance-monitor .stat-value {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.lt-performance-monitor .graph-container {
+  width: 100px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lt-performance-monitor .graph-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+// 全局变量
+:root {
+  --lt-slot-embed-image-bg: rgba(0, 0, 0, 0.3);
+  --lt-custom-status-width: 76px;
+  --lt-slot-outside-text-color: rgba(255, 255, 255, 1);
+}
+
+// 阻止撤回标记自定义颜色
+.lt-custom-recall-color {
+  --lt-slot-recall-text-color: var(--lt-recall-color);
+  --lt-slot-reedit-text-color: var(--lt-reedit-color);
+}
+
+// 如果启用了插入时间，则隐藏默认的时间
+.message:has(.lt-time) {
+  .send-time {
+    display: none;
+  }
+}
+
+// 插槽样式
+.lt-slot {
+  user-select: none;
+  // 图片插槽
+  &.embed-image {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 14px;
+    user-select: none;
+    &.f-show {
+      .lt-time {
+        display: block !important;
+      }
+    }
+    .lt-spacer {
+      display: none;
+    }
+    .lt-float {
+      width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      z-index: 10;
+      text-align: center;
+      & > *:not(:first-child) {
+        padding-left: 0;
+      }
+      & > * {
+        padding: 2px 6px;
+        background-color: var(--lt-slot-embed-image-bg);
+        color: var(--lt-slot-outside-text-color);
+        white-space: nowrap;
+      }
+
+      .lt-time {
+        display: none;
+      }
+      .lt-recall {
+        color: var(--lt-slot-recall-text-color, var(--lt-slot-outside-text-color));
+      }
+    }
+  }
+  // 内部插槽
+  &.embed {
+    float: right;
+    font-size: 12px;
+    line-height: 11px;
+    width: auto;
+    user-select: none;
+    .lt-spacer {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      visibility: hidden;
+      & > * {
+        margin-left: 3px;
+        &:first-child {
+          margin-left: 6px;
+        }
+      }
+    }
+    .lt-float {
+      width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      & > * {
+        margin-left: 3px;
+        color: inherit;
+        &:first-child {
+          margin-left: 6px;
+        }
+      }
+      .lt-time {
+        opacity: 0.6;
+      }
+      .lt-recall {
+        color: var(--lt-slot-recall-text-color, inherit);
+        opacity: var(--lt-slot-recall-text-color, 0.6);
+      }
+    }
+  }
+  // 外部插槽
+  &.outside {
+    margin-top: 6px;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 14px;
+    width: auto;
+    user-select: none;
+    align-self: flex-start;
+    justify-items: flex-start;
+    .lt-float {
+      width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      z-index: 10;
+      text-align: center;
+      & > *:not(:first-child) {
+        padding-left: 0;
+      }
+      & > * {
+        padding: 2px 6px;
+        background-color: var(--lt-slot-outside-bg);
+        color: var(--lt-slot-outside-text-color);
+      }
+      .lt-time {
+        display: none;
+      }
+      .lt-recall {
+        color: var(--lt-slot-recall-text-color, var(--lt-slot-outside-text-color));
+      }
+    }
+    .lt-spacer {
+      display: none;
+    }
+  }
+}
+
+// 复读按钮
+.lt-repeat {
+  letter-spacing: -2px;
+  padding: 2px 4px !important;
+  background-color: var(--lt-slot-outside-bg);
+  color: var(--lt-slot-outside-text-color);
+  cursor: pointer;
+  text-align: center;
+  display: none;
+  transition: background-color 150ms;
+  &:hover {
+    background-color: color(from var(--lt-slot-outside-bg) srgb r g b / 0.3) !important;
+  }
+  &:active {
+    background-color: color(from var(--lt-slot-outside-bg) srgb r g b / 0.45) !important;
+  }
+}
+
+// 已经被撤回的消息隐藏复读按钮
+.message:has(.lt-recall) {
+  .lt-repeat {
+    display: none !important;
+  }
+}
+
+// 鼠标悬浮显示时间和复读按钮
+.message:has(.lt-time, .lt-repeat):hover {
+  .lt-slot:is(.outside, .embed-image) {
+    .lt-time,
+    .lt-repeat {
+      display: block;
+    }
+  }
+}
+
+// 移除空的链接信息元素和给链接信息块添加间距
+.message:has(.lt-slot.embed) {
+  .link-info {
+    &:not(:has(.link-info__area)) {
+      display: none;
+    }
+    margin-bottom: 8px;
+  }
+}
+
+// 覆盖默认样式
+.message-container:has(.content-status .lt-slot) {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template-areas:
+    "checkbox avatar . nickname nickname nickname"
+    "checkbox avatar . content status status"
+    "checkbox avatar . tips . .";
+  grid-template-columns: auto var(--avatar_size_2) 8px auto calc(var(--avatar_size_2) + 36px) 1fr;
+  justify-content: start;
+  transition-duration: 0.3s;
+  padding: 8px 20px;
+  // 移除语音消息的padding和margin
+  .message-content__wrapper {
+    .ptt-message__container.ptt-message {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
+  // 语音消息
+  &.ptt-message:has(.container--others) {
+    grid-template-columns: auto var(--avatar_size_2) 8px auto calc(var(--avatar_size_2) + 36px) 1fr;
+  }
+  // 自己的消息
+  &.message-container--align-right {
+    grid-template-areas:
+      "checkbox nickname nickname nickname . avatar"
+      "checkbox status status content . avatar"
+      "checkbox . tips tips . avatar";
+    grid-template-columns: auto calc(var(--avatar_size_2) + 36px) 1fr auto 8px var(--avatar_size_2);
+    justify-content: end;
+    justify-items: end;
+    .message-tips {
+      justify-self: end !important;
+    }
+    // 调整位置
+    .lt-repeat {
+      order: -1;
+    }
+  }
+}
+
+// 移除vip彩色昵称
+.lt-remove-vip-color {
+  .recent-contact {
+    .viewport-list {
+      .recent-contact-item {
+        .item__content {
+          .main-info {
+            .text-ellipsis {
+              color: unset !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .aio {
+    .chat-header {
+      .panel-header__title {
+        .chat-header__contact-name {
+          color: unset !important;
+        }
+      }
+    }
+  }
+}
+
+// 测试样式
+.test {
+  .message-container {
+    & > * {
+      background-image:
+        linear-gradient(to right, #0af 1px, transparent 1px), linear-gradient(to bottom, #0af 1px, transparent 1px);
+      background-size: calc(100% - 1px) calc(100% - 1px);
+    }
+  }
+  .message-container:has(.content-status .lt-slot) {
+    background-color: antiquewhite;
+  }
+  .content-status.no-copy:has(.lt-slot) {
+    background-color: aquamarine;
+  }
+}
+
+// 悬浮提示内容
+.lt-toast {
+  --msg-height: 58px;
+  --msg-maring: 12px;
+  --lt-toast-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  z-index: 6000;
+  pointer-events: none;
+  display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  // background-color: blue;
+  align-items: center;
+  flex-direction: column;
+  .lt-toast-item {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(-30px);
+    height: 0;
+    transition: 500ms;
+    position: relative;
+    width: 100%;
+    .lt-toast-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      background-color: var(--lt-toast-bg);
+      box-shadow:
+        var(--lt-toast-shadow),
+        inset 0 0 0 1.5px var(--lt-border-standard);
+      border-radius: 12px;
+      box-sizing: border-box;
+      padding: 14px 16px;
+      max-width: calc(100% - var(--msg-maring) * 2);
+      i {
+        flex-shrink: 0;
+        margin-right: 8px;
+      }
+      span{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;        
+      }
+    }
+    &.lt-toast-show {
+      opacity: 1;
+      height: var(--msg-height);
+      transform: translateY(0);
+    }
+  }
+}
+
+// 消息合并样式
+.lt-msg-main {
+  .message__timestamp {
+    margin-top: 8px !important;
+  }
+  .message-container {
+    transition: unset !important;
+    padding-bottom: 0 !important;
+  }
+  .avatar-span {
+    position: relative;
+    .avatar-sticky {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: var(--sticky-height, 0px);
+      background-color: red;
+      .avatar {
+        position: sticky !important;
+        top: 10px;
+        bottom: 10px;
+        left: 0;
+      }
+    }
+  }
+}
+
+.ml-list,
+.avatar-span {
+  overflow: unset !important;
+}
+
+.lt-msg-child {
+  .message__timestamp {
+    margin-top: 8px !important;
+  }
+  .avatar-span {
+    visibility: hidden !important;
+  }
+  .user-name {
+    display: none !important;
+  }
+  .message-container {
+    transition: unset !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+// 撤回标记容器
+.lt-recall-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+// 撤回标记
+.lt-recall-avatar {
+  display: block;
+  font-size: 12px;
+  color: var(--lt-slot-recall-text-color, rgb(255, 121, 121));
+  user-select: none;
+  white-space: nowrap;
+}
+
+// 重新编辑按钮
+.lt-reedit-btn {
+  display: block;
+  font-size: 12px;
+  color: var(--lt-slot-reedit-text-color, var(--lt-slot-recall-text-color, rgb(255, 121, 121)));
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 150ms;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+  
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.msg-content-container:has(.lt-recall-container) {
+  padding-right: 65px !important;
+  padding-left: 12px !important;
+  
+  .message-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .pic-element,
+  .face-element {
+    position: relative;
+  }
+}
+
+// 隐藏锁定按钮
+.lt-hide-lock-btn {
+  .sidebar-wrapper .sidebar__lower .more-h-menu-item:has([aria-label="锁定"]),
+  .q-context-menu .q-context-menu-item:has([aria-label="锁定"]) {
+    display: none !important;
+  }
+}
+
+// 隐藏退出账号按钮
+.lt-hide-logout-btn {
+  .sidebar-wrapper .sidebar__lower .more-h-menu-item:has([aria-label="退出账号"]),
+  .q-context-menu .q-context-menu-item:has([aria-label="退出账号"]) {
+    display: none !important;
+  }
+}
+
+// 隐藏检查更新按钮
+.lt-hide-update-btn {
+  .sidebar-wrapper .sidebar__lower .more-h-menu-item:has([aria-label="检查更新"]),
+  .q-context-menu .q-context-menu-item:has([aria-label="检查更新"]) {
+    display: none !important;
+  }
+}
+
+// 隐藏聊天记录管理
+.lt-hide-chat-record-manager {
+  .sidebar-wrapper .sidebar__lower .more-h-menu-item:has([aria-label="聊天记录管理"]),
+  .q-context-menu .q-context-menu-item:has([aria-label="聊天记录管理"]) {
+    display: none !important;
+  }
+}
+
+// 隐藏帮助
+.lt-hide-help {
+  .sidebar-wrapper .sidebar__lower .more-h-menu-item:has([aria-label="帮助"]),
+  .q-context-menu .q-context-menu-item:has([aria-label="帮助"]) {
+    display: none !important;
+  }
+}
