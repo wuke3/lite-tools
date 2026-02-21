@@ -17,10 +17,10 @@
       "qwqnt-plugin-settings": "^2.0.0"
     }
   },
-  "author": "xiyuesaves",
+  "author": "wuke3",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xiyuesaves/lite-tools/tree/dev/v5"
+    "url": "https://github.com/wuke3/lite-tools"
   },
   "license": "AGPL-3.0-only",
   "main": "./dist/main/index.js",
