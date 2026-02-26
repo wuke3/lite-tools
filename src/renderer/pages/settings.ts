@@ -45,12 +45,14 @@ async function initSettingView(view: HTMLDivElement) {
   <p>构建时间：${__BUILD_DATE__}</p>
   </div>
   `;
-    devInfo.insertAdjacentHTML(
-      "afterbegin",
-      `<div style="color: red;justify-content: center;" class="vertical-list-item">
+    if (!__DEV__ && __ALPHA__) {
+      devInfo.insertAdjacentHTML(
+        "afterbegin",
+        `<div style="color: red;justify-content: center;" class="vertical-list-item">
     <p><strong>${randomQuote}</strong></p>
   </div>`,
-    );
+      );
+    }
     const settingsHTML = await (await fetch(resolvePath(join(pluginPath, "dist/renderer", settingsHTMLPath)))).text();
     view.insertAdjacentHTML("beforeend", settingsHTML);
     view.querySelector(".lite-tools-settings")!.insertAdjacentElement("afterbegin", devInfo);
