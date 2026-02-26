@@ -23,6 +23,7 @@ const baseConfig: BuildOptions = {
   assetNames: "assets/[name]-[hash]",
   define: {
     __DEV__: isDev.toString(),
+    __ALPHA__: isAlpha.toString(),
     __VERSION__: `"${packageJson.version}"`,
     __QQNT_VERSION__: `"${packageJson.qqntVersion}"`,
     __BUILD_DATE__: `"${new Date().toLocaleDateString("zh-CN", { hour12: false })}"`,
