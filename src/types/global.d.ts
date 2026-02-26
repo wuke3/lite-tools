@@ -5,6 +5,9 @@ declare global {
   // 开发环境
   const __DEV__: boolean;
 
+  // Alpha 环境
+  const __ALPHA__: boolean;
+  
   // 插件版本
   const __VERSION__: string;
 
