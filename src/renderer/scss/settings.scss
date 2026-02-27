@@ -458,7 +458,38 @@
   }
 
   .slot-input-box {
-    width: 62px !important;
+    width: 100% !important;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .slot-input {
+    flex: 1;
+    margin: 0 4px;
+  }
+  
+  .slot-input:first-child {
+    margin-left: 0;
+  }
+  
+  .slot-input:last-child {
+    margin-right: 0;
+  }
+  
+  .slot-textarea {
+    width: 100% !important;
+    max-width: 300px;
+    min-height: 80px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: var(--overlay_active);
+    resize: vertical;
+  }
+  
+  .slot-input-separator {
+    margin: 0 4px;
+    color: var(--text_secondary);
   }
   .fonts-selector {
     width: calc(100% - 400px) !important;

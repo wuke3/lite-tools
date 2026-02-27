@@ -130,64 +130,7 @@
           <span class="q-switch__handle"></span>
         </div>
       </li>
-      <hr class="horizontal-dividing-line" />
-      <li class="vertical-list-item">
-        <div>
-          <h2>显示消息发送时间</h2>
-          <span class="secondary-text">显示每一条消息的发送时间 - 重载消息生效</span>
-        </div>
-        <div class="q-switch" data-config="message.showSendTime.enabled">
-          <span class="q-switch__handle"></span>
-        </div>
-      </li>
-      <li class="vertical-list-item sub-item">
-        <div>
-          <h2 title="或许可以避免迷失在时差中...">显示时区</h2>
-          <span class="secondary-text">在时间前面显示当前时区，比如 “GMT +8”</span>
-        </div>
-        <div class="q-switch" data-config="message.showSendTime.showTimeZone">
-          <span class="q-switch__handle"></span>
-        </div>
-      </li>
-      <hr class="horizontal-dividing-line" />
-      <li class="vertical-list-item sub-item">
-        <div>
-          <h2>时间格式</h2>
-          <span class="secondary-text">调整显示的时间格式</span>
-        </div>
-        <div class="setting-select" data-config="message.showSendTime.timeFormat">
-          <div class="setting-view text_color show-icon" data-value="未初始化"></div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
-          </svg>
-          <div class="setting-option">
-            <div class="setting-item" data-value="220">hh:mm</div>
-            <div class="setting-item" data-value="222">hh:mm:ss</div>
-          </div>
-        </div>
-      </li>
-      <hr class="horizontal-dividing-line" />
-      <li class="vertical-list-item sub-item">
-        <div>
-          <h2>日期格式</h2>
-          <span class="secondary-text">调整显示的日期格式</span>
-        </div>
-        <div class="setting-select" data-config="message.showSendTime.dateFormat">
-          <div class="setting-view text_color show-icon" data-value="未初始化"></div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
-          </svg>
-          <div class="setting-option show">
-            <div class="setting-item" data-value="000">不显示</div>
-            <div class="setting-item" data-value="011">M/D</div>
-            <div class="setting-item" data-value="022">MM/DD</div>
-            <div class="setting-item" data-value="211">YY/M/D</div>
-            <div class="setting-item" data-value="222">YY/MM/DD</div>
-            <div class="setting-item" data-value="111">YYYY/M/D</div>
-            <div class="setting-item" data-value="122">YYYY/MM/DD</div>
-          </div>
-        </div>
-      </li>
+
     </ul>
   </div>
   <!-- 阻止撤回 -->
@@ -309,6 +252,305 @@
         </div>
         <div class="ops-btns">
           <button class="q-button q-button--small q-button--secondary open-recall-msg-list">查看</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- 抢红包 -->
+  <div class="wrap chatMessage">
+    <div class="vertical-list-item title">
+      <h2>抢红包</h2>
+      <svg class="icon is-fold" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <ul class="hidden">
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>启用</h2>
+        </div>
+        <div class="q-switch" data-config="message.grabRedBag.enabled">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>仅通知模式</h2>
+          <span class="secondary-text">只通知不抢红包</span>
+        </div>
+        <div class="q-switch" data-config="message.grabRedBag.notificationonly">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>一分钱检测</h2>
+          <span class="secondary-text">检测到一分钱红包后暂停该群抢红包5分钟</span>
+        </div>
+        <div class="q-switch" data-config="message.grabRedBag.antiDetect">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>随机延迟</h2>
+          <span class="secondary-text">抢红包前随机延迟一段时间，避免被检测</span>
+        </div>
+        <div class="q-switch" data-config="message.grabRedBag.useRandomDelay">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>延迟范围(毫秒)</h2>
+        </div>
+        <div class="slot-input-box">
+          <input
+            placeholder="0"
+            class="slot-input text_color"
+            data-config="message.grabRedBag.delayLowerBound"
+            type="number"
+            spellcheck="false"
+          />
+          <span class="slot-input-separator">-</span>
+          <input
+            placeholder="0"
+            class="slot-input text_color"
+            data-config="message.grabRedBag.delayUpperBound"
+            type="number"
+            spellcheck="false"
+          />
+        </div>
+      </li>
+      <li class="vertical-list-item">
+        <div>
+          <h2>回复随机延迟</h2>
+          <span class="secondary-text">发送感谢消息前随机延迟一段时间，避免被检测</span>
+        </div>
+        <div class="q-switch" data-config="message.grabRedBag.useRandomDelayForSend">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>回复延迟范围(毫秒)</h2>
+        </div>
+        <div class="slot-input-box">
+          <input
+            placeholder="0"
+            class="slot-input text_color"
+            data-config="message.grabRedBag.delayLowerBoundForSend"
+            type="number"
+            spellcheck="false"
+          />
+          <span class="slot-input-separator">-</span>
+          <input
+            placeholder="0"
+            class="slot-input text_color"
+            data-config="message.grabRedBag.delayUpperBoundForSend"
+            type="number"
+            spellcheck="false"
+          />
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>自动回复</h2>
+          <span class="secondary-text">抢到红包后自动回复感谢消息</span>
+        </div>
+        <div class="q-switch" data-config="message.grabRedBag.autoReply">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>感谢消息</h2>
+          <span class="secondary-text">抢到红包后发送的感谢消息，每行一条</span>
+        </div>
+        <div class="slot-input-box">
+          <textarea
+            placeholder="谢谢老板！\n感谢红包！"
+            class="slot-textarea text_color"
+            data-config="message.grabRedBag.thanksMsgs"
+            spellcheck="false"
+          ></textarea>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>时段限制</h2>
+          <span class="secondary-text">在指定时间段内不抢红包</span>
+        </div>
+        <div class="q-switch" data-config="message.grabRedBag.stopGrabByTime">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>限制时段</h2>
+        </div>
+        <div class="slot-input-box">
+          <input
+            placeholder="00:00"
+            class="slot-input text_color"
+            data-config="message.grabRedBag.stopGrabStartTime"
+            type="time"
+            spellcheck="false"
+          />
+          <span class="slot-input-separator">-</span>
+          <input
+            placeholder="00:00"
+            class="slot-input text_color"
+            data-config="message.grabRedBag.stopGrabEndTime"
+            type="time"
+            spellcheck="false"
+          />
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>黑白名单</h2>
+          <span class="secondary-text">设置抢红包的黑白名单</span>
+        </div>
+        <div class="setting-select" data-config="message.grabRedBag.blockType">
+          <div class="setting-view text_color show-icon" data-value="未初始化"></div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+          </svg>
+          <div class="setting-option">
+            <div class="setting-item" data-value="0">不启用</div>
+            <div class="setting-item" data-value="1">白名单</div>
+            <div class="setting-item" data-value="2">黑名单</div>
+          </div>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>关键字</h2>
+          <span class="secondary-text">白名单模式：包含关键字才抢；黑名单模式：包含关键字不抢</span>
+        </div>
+        <div class="slot-input-box">
+          <textarea
+            placeholder="红包\n福利"
+            class="slot-textarea text_color"
+            data-config="message.grabRedBag.listenKeyWords"
+            spellcheck="false"
+          ></textarea>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>群聊</h2>
+          <span class="secondary-text">白名单模式：在这些群里才抢；黑名单模式：在这些群里不抢</span>
+        </div>
+        <div class="slot-input-box">
+          <textarea
+            placeholder="群号1\n群号2"
+            class="slot-textarea text_color"
+            data-config="message.grabRedBag.listenGroups"
+            spellcheck="false"
+          ></textarea>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>发送者</h2>
+          <span class="secondary-text">白名单模式：这些发送者的红包才抢；黑名单模式：这些发送者的红包不抢</span>
+        </div>
+        <div class="slot-input-box">
+          <textarea
+            placeholder="QQ号1\nQQ号2"
+            class="slot-textarea text_color"
+            data-config="message.grabRedBag.listenQQs"
+            spellcheck="false"
+          ></textarea>
+        </div>
+      </li>
+      <li class="vertical-list-item">
+        <div>
+          <h2>监听所有群聊</h2>
+          <span class="secondary-text">启用后会占用更多资源 - 重启生效</span>
+        </div>
+        <div class="q-switch" data-config="message.grabRedBag.isActiveAllGroups">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <li class="vertical-list-item">
+        <div>
+          <h2>给自己发送通知</h2>
+          <span class="secondary-text">抢到红包后是否给自己发送消息</span>
+        </div>
+        <div class="q-switch" data-config="message.grabRedBag.useSelfNotice">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <li class="vertical-list-item">
+        <div>
+          <h2>拦截时发送提醒</h2>
+          <span class="secondary-text">黑白名单拦截时是否发送提醒</span>
+        </div>
+        <div class="q-switch" data-config="message.grabRedBag.notifyOnBlocked">
+          <span class="q-switch__handle"></span>
+        </div>
+      </li>
+      <hr class="horizontal-dividing-line" />
+      <li class="vertical-list-item">
+        <div>
+          <h2>通知设置</h2>
+          <span class="secondary-text">抢到红包后通知方式</span>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>通知目标</h2>
+        </div>
+        <div class="setting-select" data-config="message.grabRedBag.Send2WhoType">
+          <div class="setting-view text_color show-icon" data-value="未初始化"></div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 8L12 17L3 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+          </svg>
+          <div class="setting-option">
+            <div class="setting-item" data-value="0">自己</div>
+            <div class="setting-item" data-value="1">我的手机</div>
+            <div class="setting-item" data-value="2">QQ好友</div>
+            <div class="setting-item" data-value="3">群聊</div>
+          </div>
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>通知对象</h2>
+          <span class="secondary-text">QQ好友或群聊的ID</span>
+        </div>
+        <div class="slot-input-box">
+          <input
+            placeholder="QQ号或群号"
+            class="slot-input text_color"
+            data-config="message.grabRedBag.Send2Who"
+            type="text"
+            spellcheck="false"
+          />
+        </div>
+      </li>
+      <li class="vertical-list-item sub-item">
+        <div>
+          <h2>通知内容</h2>
+          <span class="secondary-text">抢到红包后的通知内容，%peerName%=群名，%peerUid%=群号，%senderName%=发送者，%sendUin%=发送者QQ，%amount%=金额</span>
+        </div>
+        <div class="slot-input-box">
+          <textarea
+            placeholder="[Grab RedBag]收到来自群\"%peerName%(%peerUid%)\"成员:\"%senderName%(%sendUin%)\"发送的的红包%amount%元"
+            class="slot-textarea text_color"
+            data-config="message.grabRedBag.receiveMsg"
+            spellcheck="false"
+          ></textarea>
         </div>
       </li>
     </ul>

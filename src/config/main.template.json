@@ -33,12 +33,7 @@
   "message": {
     "miniArkToWebArk": false,
     "marketFaceToPicElement": false,
-    "showSendTime": {
-      "enabled": false,
-      "showTimeZone": false,
-      "timeFormat": "220",
-      "dateFormat": "000"
-    },
+
     "preventRecall": {
       "enabled": false,
       "persistedFiles": false,
@@ -53,6 +48,36 @@
       "MAX_PERSISTED_FILES": 5,
       "MAX_MESSAGES_PER_FILE": 1000,
       "MAX_RECALL_CACHE_SIZE": 100000
+    },
+    "grabRedBag": {
+      "enabled": false,
+      "notificationonly": false,
+      "antiDetect": false,
+      "useRandomDelay": false,
+      "delayLowerBound": "0",
+      "delayUpperBound": "0",
+      "delayLowerBoundForSend": "0",
+      "delayUpperBoundForSend": "0",
+      "avoidKeyWords": [],
+      "avoidGroups": [],
+      "avoidQQs": [],
+      "listenKeyWords": [],
+      "listenGroups": [],
+      "listenQQs": [],
+      "Send2Who": [],
+      "Send2WhoType": "0",
+      "useSelfNotice": true,
+      "autoReply": false,
+      "thanksMsgs": [],
+      "isActiveAllGroups": false,
+      "blockType": "0",
+      "totalRedBagNum": 0,
+      "totalAmount": 0,
+      "stopGrabByTime": false,
+      "stopGrabStartTime": "00:00",
+      "stopGrabEndTime": "00:00",
+      "notifyOnBlocked": false,
+      "receiveMsg": "[Grab RedBag]收到来自群\"%peerName%(%peerUid%)\"成员:\"%senderName%(%sendUin%)\"发送的的红包%amount%元"
     }
   },
   "sideBar": {

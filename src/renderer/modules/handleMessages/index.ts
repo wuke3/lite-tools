@@ -8,7 +8,7 @@ import { initRecallMessageListener, insertRecallTag } from "./messageRecall";
 import { mergeMessage } from "./mergeMessage";
 import { messageImageMask } from "./messageImageMask";
 import { insertSlot } from "./messageSlot";
-import { insertTime } from "./insertTime";
+import { handleRedBag } from "./messageRedBag";
 
 import type { MessageElement } from "./type";
 
@@ -38,7 +38,7 @@ async function setupHandleMessages() {
 }
 
 function enabledSlot() {
-  return configStore.value.message.showSendTime.enabled || configStore.value.message.preventRecall.enabled;
+  return configStore.value.message.preventRecall.enabled;
 }
 
 function handleMessages(component: any) {
@@ -64,11 +64,11 @@ function enhanceMessage(component: any) {
   const messageEl = component.vnode.el as any;
   const msgRecord = component.props.msgRecord;
   const slot = insertSlot(messageEl, msgRecord);
-  if (configStore.value.message.showSendTime.enabled && slot) {
-    insertTime(slot, msgRecord);
-  }
   if (configStore.value.message.preventRecall.enabled) {
     insertRecallTag(messageEl, msgRecord);
+  }
+  if (configStore.value.message.grabRedBag.enabled) {
+    handleRedBag(msgRecord);
   }
 }
 

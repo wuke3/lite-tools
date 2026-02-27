@@ -45,7 +45,7 @@ async function initSettingView(view: HTMLDivElement) {
   <p>构建时间：${__BUILD_DATE__}</p>
   </div>
   `;
-    if (!__DEV__ && __ALPHA__) {
+    if (!__DEV__) {
       devInfo.insertAdjacentHTML(
         "afterbegin",
         `<div style="color: red;justify-content: center;" class="vertical-list-item">
@@ -185,6 +185,7 @@ function initButton(view: HTMLDivElement, config: Config) {
 
 // 初始化输入框
 function initInput(view: HTMLDivElement, config: Config) {
+  // 处理 input 元素
   view.querySelectorAll<HTMLInputElement>("input").forEach((el) => {
     const configPath = el.getAttribute("data-config");
     if (!configPath) return;
@@ -196,10 +197,11 @@ function initInput(view: HTMLDivElement, config: Config) {
       el.setAttribute("placeholder", "配置项不存在");
       return;
     }
-    el.value = value;
+    // 如果是数组，将其转换为逗号分隔的字符串
+    el.value = Array.isArray(value) ? value.join(",") : value;
     view.addEventListener(configPath, (e) => {
-      const event = e as CustomEvent<string>;
-      el.value = event.detail;
+      const event = e as CustomEvent<string | string[]>;
+      el.value = Array.isArray(event.detail) ? event.detail.join(",") : event.detail;
     });
     if (el.hasAttribute("readonly")) {
       if (el.hasAttribute("data-clear")) {
@@ -211,11 +213,47 @@ function initInput(view: HTMLDivElement, config: Config) {
       }
     } else {
       el.addEventListener("change", () => {
-        setValueByPath(config, configPath, el.value);
-        configStore.setConfig(config);
-        dispatchEvent(view, configPath, el.value);
+        // 检查是否是 Send2Who 配置项
+        if (configPath === "message.grabRedBag.Send2Who") {
+          // 将逗号分隔的字符串转换为数组
+          const value = el.value.split(",").filter(item => item.trim() !== "");
+          setValueByPath(config, configPath, value);
+          configStore.setConfig(config);
+          dispatchEvent(view, configPath, value);
+        } else {
+          setValueByPath(config, configPath, el.value);
+          configStore.setConfig(config);
+          dispatchEvent(view, configPath, el.value);
+        }
       });
     }
+  });
+  
+  // 处理 textarea 元素
+  view.querySelectorAll<HTMLTextAreaElement>("textarea").forEach((el) => {
+    const configPath = el.getAttribute("data-config");
+    if (!configPath) return;
+
+    const value = getValueByPath(config, configPath);
+    if (value === undefined) {
+      el.classList.add("error-input");
+      el.value = "";
+      el.setAttribute("placeholder", "配置项不存在");
+      return;
+    }
+    // 如果是数组，将其转换为换行分隔的字符串
+    el.value = Array.isArray(value) ? value.join("\n") : value;
+    view.addEventListener(configPath, (e) => {
+      const event = e as CustomEvent<string | string[]>;
+      el.value = Array.isArray(event.detail) ? event.detail.join("\n") : event.detail;
+    });
+    el.addEventListener("change", () => {
+      // 将换行分隔的字符串转换为数组
+      const value = el.value.split("\n").filter(item => item.trim() !== "");
+      setValueByPath(config, configPath, value);
+      configStore.setConfig(config);
+      dispatchEvent(view, configPath, value);
+    });
   });
 }
 
